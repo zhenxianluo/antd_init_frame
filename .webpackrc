@@ -1,0 +1,17 @@
+{
+  "entry": "src/index.js",
+  "publicPath":"/",
+  "outputPath": "./build",
+  "disableCSSModules": true,
+  "extraBabelPlugins": [
+    ["import", { "libraryName": "antd", "libraryDirectory": "es", "style": "css" }]
+  ]
+  //"proxy": {
+  //  "/apiserver": {
+  //    "target": "http://***.***.***.***/",
+  //    "changeOrigin": true,
+  //    "secure": false,
+  //    "pathRewrite": { "^/oldpath": "/newpath" }
+  //  }
+  //},
+}

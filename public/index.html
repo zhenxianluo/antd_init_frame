@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="theme-color" content="#000000">
+    <link href="index.css" rel="stylesheet" type="text/css" />
+    <title>demo</title>
+		<script>
+      // 用于增加rem的使用, crucial_width表示调整rem值的临界屏幕宽度值, 一般为手机宽度640
+      var crucial_width = 640;
+			(function (doc, win) {
+				var docEl = doc.documentElement,
+						resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+						recalc = function () {
+							var clientWidth = docEl.clientWidth;
+							if (!clientWidth) return;
+							if(clientWidth >= crucial_width){
+								docEl.style.fontSize = '100px';
+							}else{
+								docEl.style.fontSize = 100 * (clientWidth / crucial_width) + 'px';
+							}
+						};
+				if (!doc.addEventListener) return;
+				win.addEventListener(resizeEvt, recalc, false);
+				doc.addEventListener('DOMContentLoaded', recalc, false);
+			})(document, window);
+		</script>
+  </head>
+  <body>
+    <noscript>
+      You need to enable JavaScript to run this app.
+    </noscript>
+    <div id="root"></div>
+    <script src="index.js"></script>
+  </body>
+</html>
